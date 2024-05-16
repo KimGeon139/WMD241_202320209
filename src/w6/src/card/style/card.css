@@ -1,0 +1,103 @@
+/*ctrl+/*/
+/*rem/px: alt+z*/
+
+/* @import로 폰트 가져오기 = css로 가져오기 (비선호 성능이 별로) or link 로  HTML에 가져오기 */
+
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+/* font-family: "Cute Font", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+/* 글자(타이포)에 관련된건 전부 부모-자녀로 상속됨 */
+
+/* font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+
+* {
+  box-sizing: border-box;
+}
+/*거의 무조건 넣음*/
+body {
+  font-family: "Cute Font", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+/*큰건 작게,만들어줌. 부모보다 작게
+작은건 커지지 않음*/
+/* .card--color-blue {
+  background-color: oklch(98% 0.025 200);
+} 작동 안하는 이유 = 나중에 쓰인게 힘이 더 쎄다.*/
+.card.card--color-blue {
+  background-color: oklch(98% 0.025 200);
+}
+/*붙여쓰면 작동 함. -> 둘다 있는 애 지목, 좀더 구체적으로 지목, 특정하는 정도(Specificity)가 올라감, 하지만 대부분의 오류가 이게 너무 올라가서 생김.*/
+.card {
+  max-width: 25rem;
+  background-color: oklch(
+    98% 0.025 90
+  ); /*요즘 웹에서 자주 사용하는 색,-> 사람의 인지에 맞게 밝기를 바꿔줌*/
+  overflow-x: hidden; /**/
+  /* padding: 1rem;여백줌 */
+  border-radius: 12px; /* top, left, bottom, right*/ /* 배경 라운드 굴림 */
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* 100을 단위로 생각*/
+  font-style: normal;
+  margin-top: 3rem;
+}
+
+.card:first-child {
+  margin-top: 0rem;
+}
+/* psuedo selector */
+
+.card__img {
+  width: 100%;
+}
+/*작은 이미지 해결*/
+
+/*여백 주는 방법 = 1.부모님 padding(o) 2.자녀 margin(x-> 불가능은 아니나, 이상한 문제가 많이 생김)*/
+.card__top {
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  /* 이미지 여백 x 글씨 여백 O */
+}
+
+.card__bottom {
+  padding: 1rem;
+}
+
+.card__p {
+  margin-top: 2rem;
+}
+/* 간격줄때 아래꺼 위에 마진 주는걸 추천, 뭔가 들어왔을때를 생각 */
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.card__subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+/* 같은 클래스 이름을 가진것중 일부 바꾸기 */
+.card__bottom .card__title {
+  font-weight: 400;
+}
+
+/* .card__bottom > .card__title {
+  font-weight: 400;
+} 방법 2*/
+
+.card__bottom .card__subtitle {
+  margin: 0;
+}

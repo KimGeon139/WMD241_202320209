@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.125rem;
+}
+
+/* 글자에 대한건 대부분 상속됨, 마진이나 패딩은 안됨 */
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin-inline: auto;
+  background-color: oklch(90% 0 0);
+  padding-inline: 2.5rem;
+}
+
+.container > div {
+  padding: 1rem;
+}
+
+.container > div:nth-child(1) {
+  background-color: oklch(90% 0.05 0);
+  border: 1px dotted oklch(40% 0.05 0);
+  color: oklch(20% 0.05 0);
+}
+.container > div:nth-child(2) {
+  background-color: oklch(90% 0.05 40);
+  border: 1px dotted oklch(40% 0.05 40);
+  color: oklch(20% 0.05 40);
+}
+.container > div:nth-child(3) {
+  background-color: oklch(90% 0.05 80);
+  border: 1px dotted oklch(40% 0.05 80);
+  color: oklch(20% 0.05 80);
+}
+.container > div:nth-child(4) {
+  background-color: oklch(90% 0.05 120);
+  border: 1px dotted oklch(40% 0.05 120);
+  color: oklch(20% 0.05 120);
+}
+.container > div:nth-child(5) {
+  background-color: oklch(90% 0.05 160);
+  border: 1px dotted oklch(40% 0.05 160);
+  color: oklch(20% 0.05 160);
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child-opt-1 {
+  flex-grow: 1;
+}
+.flex-child-opt-2 {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+/* ^^^^^^^^^^^^ */
+/* 크기 균등하게 하는법 */
+/* 각주 처리 할때 커서 여러개로 각줄 각주 처리 추천 */
+
+.flex-container-opt-1 {
+  /* gap: 1rem; */
+  column-gap: 1rem; /*가로*/
+  row-gap: 1.5rem; /*세로*/
+}
+
+.flex-container-opt-2 {
+  /* justify-content: left; */
+  /* justify-content: right; */
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  /* 1ㄷ2ㄷ2ㄷ1 */
+  /* justify-content: space-between; */
+  /* 가장 많이 씀 */
+  justify-content: space-evenly;
+  /* 1ㄷ1ㄷ1ㄷ1 */
+}
+
+.flex-container-opt-3 {
+  /* align-items: stretch; 기본옵션*/
+  /* align-items: start; */
+  /* align-items: end; */
+  align-items: center;
+}
+
+.flex-container-opt-4 {
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container-opt-4 > * {
+  width: 7.5rem;
+}
+
+.flex-wrap {
+  /* flex-wrap: nowrap; wrap = 감싸다>줄바꿈하다*/
+  flex-wrap: wrap;
+}
+
+.flex-wrap-opt-1 {
+  column-gap: 0.75rem;
+  row-gap: 1.5rem;
+}
+
+.flex-wrap-opt-1 > * {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 18.75rem;
+}

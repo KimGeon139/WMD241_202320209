@@ -1,0 +1,79 @@
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 150%;
+}
+
+.btn {
+  cursor: pointer;
+  //test
+  // width: min-content;
+  // width: max-content;
+  max-width: fit-content;
+  padding-block: 0.5rem 0.4375rem;
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  background-color: oklch(0.4 0.1 150);
+  color: oklch(0.9 0.1 150);
+  text-transform: capitalize;
+  border-radius: 4rem;
+  // for dev
+  margin-top: 1.25rem;
+  //
+
+  &:hover {
+    background-color: oklch(0.4 0.1 240);
+    color: oklch(0.9 0.1 240);
+    transition: all 250ms ease-out;
+  }
+
+  &--type {
+    &-elevated {
+      background-color: oklch(0.95 0.0025 150);
+      color: oklch(0.45 0.1 150);
+      box-shadow: 0rem 0.25rem 0.25rem 0rem rgba($color: #adadad, $alpha: 1);
+      &:hover {
+        background-color: oklch(0.95 0.0025 240);
+        color: oklch(0.45 0.1 240);
+        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba($color: #adadad, $alpha: 1);
+      }
+    }
+    &-tonal {
+      background-color: oklch(0.8 0.05 150);
+      color: oklch(0.3 0.1 150);
+    }
+    &-outline {
+      background-color: unset;
+      color: oklch(0.3 0.1 150);
+      border: 0.0625rem solid oklch(0.5 0 150);
+    }
+    &-text {
+      padding-block: 0.5rem 0.4375rem;
+      padding-inline: 0.75rem;
+      color: oklch(0.3 0.1 150);
+      background-color: unset;
+      &:hover {
+        background-color: unset;
+        color: oklch(0.3 0.1 150);
+        animation-name: ' rainbow';
+        animation-duration: 5s;
+      }
+    }
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: oklch(0.5 0.2 0);
+  }
+  100% {
+    background-color: oklch(0.5 0.2 360);
+  }
+}

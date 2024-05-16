@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geon Kim-About Me</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "chn7txf",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+  </head>
+  <body>
+    <div class="section navigation">
+      <div class="container container--title">
+        <div class="title">Portfolio</div>
+        <div class="subtitle">Visual Communication Design</div>
+      </div>
+      <div class="container menu">
+        <div><a href="./index.html">About Me</a></div>
+        <div><a href="./video.html">Video</a></div>
+        <div><a href="./ilust.html">Ilustration</a></div>
+        <div class="more"><a href="./more.html">More</a></div>
+      </div>
+    </div>
+    <div class="section detail"></div>
+  </body>
+</html>
