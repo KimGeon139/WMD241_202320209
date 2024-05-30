@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lottie Embeded</title>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script>
+      LottieInteractivity.create({
+        player: '#lottie-2',
+        mode: 'cursor',
+        actions: [
+          {
+            type: 'click',
+            forceFlag: false,
+          },
+        ],
+      });
+    </script>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <h1>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Necessitatibus, mollitia!
+        </h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis
+          facere tempora fugiat ullam reprehenderit, sint magnam. Dolor
+          repellat, maiores dolorum quasi provident ut quae veritatis, nobis
+          culpa impedit necessitatibus quaerat ratione quam aperiam. Placeat
+          perferendis molestias eligendi necessitatibus sint, architecto nisi
+          dignissimos modi velit expedita reprehenderit consequatur corrupti
+          alias officiis.
+        </p>
+
+        <dotlottie-player
+          id="lottie-1 "
+          class="lottie"
+          src="./asset/lottie.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></dotlottie-player>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In aliquid
+          optio tenetur, dolore cumque voluptatem aut animi eum asperiores.
+          Incidunt.
+        </p>
+        <lottie-player
+          id="lottie-2 "
+          class="lottie"
+          src="./asset/lottie.json"
+          background="transparent"
+          speed="1"
+        ></lottie-player>
+      </div>
+    </div>
+  </body>
+</html>
